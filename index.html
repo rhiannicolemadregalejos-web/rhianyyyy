@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title> Web Layout </title>
+
+<style>
+.container {
+    display: flex;
+    width: 100%;
+}
+
+article {
+    padding: 20px;
+    width: 70%;
+    background-color: lightblue;
+    min-height: 300px;
+}
+
+.sidebar {
+    width: 30%;
+    background: lightblue;
+    padding: 20px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.sidebar ul li a:hover {
+    background: lightblue;
+}
+
+
+ul.nav {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: gray;
+    text-align:center;
+}
+
+ul.nav li a {
+    display: block;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    text-align:center;
+}
+
+ul.nav li a:hover {
+    background-color: lightblue;
+    color: black;
+    text-align:center;
+}
+
+
+header {
+    background-color: blue;
+    padding: 5px;
+    text-align: center;
+    font-size: 35px;
+    color: white;
+}
+
+
+footer {
+    background-color: blue;
+    padding: 5px;
+    text-align: center;
+    color: white;
+}
+
+
+section::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+</style>
+</head>
+
+<body>
+<h2>Rhian Nicole Madregalejos</h2>
+<header>
+ <h2> SDIHS </h2>
+ <h3 style="font-size: 18px;"> Santo Domingo Integrated High School </h3>
+</header>
+
+<ul class="nav">
+<li><a href="">Home</a></li>
+<li><a href="2nd quarter documents 2 colay.html">First Quarter</a></li>
+<li><a href="2nd quarter documents 3 nics.html">Second Quarter</a></i>
+<li><a href="about.html">About</a></li>
+</ul>
+
+<section>
+
+<div class="container">
+    <nav class="sidebar">
+  <ul>
+    <li> <a href="#" onclick="loadContent('home')"> School Profile </a> </li>
+    <li> <a href="#" onclick="loadContent('shs')"> SHS </a> </li>
+    <li> <a href="#" onclick="loadContent('jhs')"> JHS </a> </li>
+  </ul>
+</nav>
+
+ <article id="content">
+ <h1> School Profile </h1>
+ <p>Santo Domingo Integrated High School was founded in 1971. <br>
+It is located at Barangay Santo Domingo, City of Santa Rosa, Laguna.
+</p>
+</article>
+</div>
+</section>
+
+<footer>
+  <p> Forth Year Students Batch 2025-2026</p>
+</footer>
+
+<script>
+function loadContent(section) {
+const content = document.getElementById('content');
+if (section === 'home') {
+        content.innerHTML = `
+  <h2> School Profile </h2>
+  <h3> Mission </h3>
+ <p>>To protect and promote the right of every Filipino to quality, equitable, culture-based, and complete basic education where:
+
+Students learn in a child-friendly, gender-sensitive, safe, and motivating enviroment.
+
+Teachers facilitate learning and contantly nurture every learner.
+
+Administrators and staff, as stewards of the institution, ensure an enabling and supportive environment for effective learning Family, community, and other stakeholders are actively engaged and share responsibilty for developing life-long learners.
+            </p>
+
+<h4> Vision </h4>
+
+<p> >We dream of Filipinos who passionately love their country and whose values and competencies enable theme to realize their full potential and contribute meaningfully to building the nation.
+
+As a learner-centered public institution, the Department of Education continuosly improves itself to better serve its stakeholders. </p>
+
+<h5> Core-Values </h5>
+
+<p> >Maka-Diyos<br>
+>Maka-Tao<br>
+>Makakalikasan<br>
+>Makabansa</p>
+ `;
+}
+
+else if (section === 'shs') {
+content.innerHTML = `
+ <h2> SHS </h2>
+<h2>  Strands for SHS </h2><br>
+<h2>Science, Technology, Engineering, and Mathematics (STEM):</h2><p> >Offers a strong foundation in math, science, and engineering principles, preparing students for careers in medicine, technology, or applied sciences.</p><br>
+
+<h2>Humanities and Social Sciences (HUMSS):</h2><p> >Concentrates on subjects like history, literature, and social sciences, suitable for students interested in liberal arts, education, law, or social work.</p>
+
+<h2>Technical-Vocational-Livelihood (TVL):</h2><p> >Geared towards hands-on skills for immediate employment after high school, with specializations like Home Economics, Industrial Arts, or Information and Communications Technology (ICT).</p><br>
+
+<h2>General Academic Strand (GAS):</h2> <p>>A flexible option for students who are still exploring their options or want a broader range of subjects from the other strands</p><br>
+
+<h2>Arts and Design & Sports Tracks:</h2><p> >Other tracks catering to students with specific interests in creative fields or athletics.</p><br>
+ `;
+}
+            
+ else if (section === 'jhs') {
+        content.innerHTML = `
+  <h2> JHS </h2> 
+  <h2> pulag cute</h2>
+  <h2> Group Members:</h2>
+  <p> <a href="document one.html">Rhian Nicole Madregalejos</a><br>
+   <a href=angela Lozano </a><br>
+   <a href=""hanna lae balurin</a><br>
+   
+</p>
+        `;
+    }
+}
+
+</script>
+
+</body>
+</html>
