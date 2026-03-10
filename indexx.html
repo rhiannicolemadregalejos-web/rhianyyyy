@@ -1,0 +1,514 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Web Layout</title>
+
+    <style>
+        /* Container */
+        .container {
+            display: flex;
+            width: 100%;
+        }
+
+        /* Article */
+        article {
+            padding: 20px;
+            width: 70%;
+            background-color: pink;
+            min-height: 300px;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 30%;
+            background: lightblue;
+            padding: 20px;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar ul li a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: block;
+        }
+
+        .sidebar ul li a:hover {
+            background: white;
+            color: black;
+        }
+
+        /* Top Navigation */
+        ul.nav {
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: blue;
+        }
+
+        ul.nav li {
+            position: relative;
+        }
+
+        ul.nav li a {
+            display: block;
+            color: white;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        ul.nav li a:hover {
+            background-color: white;
+            color: black;
+        }
+
+        /* Dropdown */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: blue;
+            min-width: 160px;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            padding: 12px 16px;
+            display: block;
+            color: white;
+        }
+
+        .dropdown-content a:hover {
+            background-color: skyblue;
+            color: black;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Header */
+        header {
+            background-color: pink;
+            padding: 5px;
+            text-align: center;
+            font-size: 35px;
+            color: black;
+        }
+
+        /* Footer */
+        footer {
+            background-color: blue;
+            padding: 5px;
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+
+<h2>Agriculture and Fishery Arts</h2>
+    <h3 style="font-size:18px;">TECHNOLOGY AND LIVELIHOOD EDUCATION</h3>
+</header>
+
+<!-- TOP NAVIGATION -->
+<ul class="nav">
+    <li><a href="#" onclick="loadContent('home')">Home</a></li>
+
+    <li class="dropdown">
+        <a href="#">Activities</a>
+        <div class="dropdown-content">
+            <a href="#" onclick="loadContent('activity1')">Activity 1</a>
+            <a href="#" onclick="loadContent('activity2')">Activity 2</a>
+        </div>
+    </li>
+
+    <li class="dropdown">
+        <a href="#">Assessment</a>
+        <div class="dropdown-content">
+            <a href="#" onclick="loadContent('assessment1')">Assessment 1</a>
+            <a href="#" onclick="loadContent('assessment2')">Assessment 2</a>
+        </div>
+    </li>
+
+    <li class="dropdown">
+        <a href="#">References</a>
+        <div class="dropdown-content">
+            <a href="#" onclick="loadContent('reference1')">
+                <strong>Where I gathered my assessment and activity information</strong>
+            </a>
+        </div>
+    </li>
+
+    <li class="dropdown">
+        <a href="#">About</a>
+        <div class="dropdown-content">
+            <a href="#" onclick="loadContent('about')">Group Members</a>
+        </div>
+    </li>
+</ul>
+
+<section>
+    <div class="container">
+
+        <!-- SIDEBAR -->
+        <nav class="sidebar">
+            <ul>
+                <li><a href="#" onclick="loadContent('content')">Content</a></li>
+                <li><a href="#" onclick="loadContent('performance')">Performance Standard</a></li>
+                <li><a href="#" onclick="loadContent('standard')">Content Standard</a></li>
+                <li><a href="#" onclick="loadContent('competencies')">Learning Competencies</a></li>
+                <li><a href="#" onclick="loadContent('objectives')">Objectives</a></li>
+            </ul>
+        </nav>
+
+        <!-- MAIN CONTENT -->
+        <article id="content">
+            <h2>Mission</h2>
+            <p>
+                The mission of ICT is to deliver reliable, secure, and innovative technological
+                solutions that support and enhance communication, data management, and productivity.
+            </p>
+
+            <h2>Vision</h2>
+            <p>
+                To create a digitally connected and empowered learning environment.
+            </p>
+
+            <h2>Core Values</h2>
+            <p>
+                MAKA-Diyos<br>
+                MAKA-Tao<br>
+                MAKA-Kalikasan<br>
+                MAKA-Bansa
+            </p>
+
+            <!-- ✅ NEW PRESENTABLE PARAGRAPH ADDED -->
+            <h2 style="font-size:24px;"><strong>Overview of Technology and Livelihood Education</strong></h2>
+            <p>
+
+This section highlights the key aspects of <strong>Technology and Livelihood Education (TLE)</strong>, including practical skills, technical knowledge, and essential life competencies. The content, activities, and assessments are designed to help learners develop meaningful understanding, hands-on experience, and the ability to apply technological and livelihood principles in real-life situations, preparing them for future studies and career opportunities.
+            </p>
+        </article>
+
+    </div>
+</section>
+
+<footer>
+    <p>Fourth Year Student Batch© 2025 SDIHS</p>
+</footer>
+
+<script>
+function loadContent(section) {
+
+    const content = document.getElementById("content");
+
+    if (section === "home") {
+        content.innerHTML = `
+            <h2>Mission</h2>
+            <p>The mission of ICT is to deliver reliable, secure, and innovative technological solutions.</p>
+
+            <h2>Vision</h2>
+            <p>To create a digitally connected and empowered learning environment.</p>
+
+            <h2>Core Values</h2>
+            <p>
+                MAKA-Diyos<br>
+                MAKA-Tao<br>
+                MAKA-Kalikasan<br>
+                MAKA-Bansa
+            </p>
+        `;
+    }
+
+    else if (section === "about") {
+        content.innerHTML = `
+            <h2>Group Members</h2>
+            <ul>
+                <li><a href="https://www.facebook.com/josezuela22" target="_blank">Jose Mirandilla</a></li>
+                <li><a href="https://www.facebook.com/share/1C8xdWpmiG/" target="_blank">Nathalie Lozano</a></li>
+                <li><a href="https://www.facebook.com/mark.cedric.amor.2025?mibextid=ZbWKwL" target="_blank">Mark Cedric Amor</a></li>
+                <li><a href="https://www.facebook.com/mikell.gabriel.dimalanta.2024?mibextid=ZbWKwL" target="_blank">Mikell Gabriel Dimalanta</a></li>
+                <li><a href="https://www.facebook.com/share/17vDvWajts/" target="_blank">Rhian Nicole Madrigalejos</a></li>
+
+
+
+            </ul>
+        `;
+    }
+
+    else if (section === "content") {
+        content.innerHTML = `
+            <h2>Content</h2>
+            <h3>CONTENT STANDARD:</h3>
+        <p>The learners demonstrate an understanding of the concepts and skills in agri-crops and animal production.</p>
+    </div>
+
+    <!-- Career & Business Opportunities Card with Integrated Explanation -->
+<div class="content-card">
+        <h2>Career and Business Opportunities in Agriculture</h2>
+
+        <h4>Career Opportunities:</h4>
+        <ul>
+            <li>Agriculturist – Applies knowledge of soil science, crop nutrition, pest management, and livestock care to optimize agricultural product growth and quality.</li>
+            <li>Farm Technician – Uses technical skills to operate equipment, monitor crop/animal health, conduct tests, and implement production best practices.</li>
+            <li>Farm Owner – Manages land planning, resource allocation, finances, and ensures compliance with industry standards for agri-crops and animal production.</li>
+        </ul>
+
+        <h4>Business Opportunities:</h4>
+        <ul>
+            <li>Traders – Relies on knowledge of product characteristics, storage, market trends, and post-harvest handling to deliver goods in good condition.</li>
+            <li>Entrepreneurs – Builds agriculture-related businesses (processing, direct-to-consumer, supply chain) using skills in product development and value chain management.</li>
+        </ul>
+
+<h4> Agricultural tools, implements, and equipment and their uses</h4>
+            <p>This covers identifying the three distinct categories of farm resources and what each is designed to do:</p>
+            <ul class="category-list">
+                <li><strong>Tools</strong> – Small, handheld items (<span class="example">e.g., bolo, hand trowel, pruning shears</span>) used for precise, manual tasks like cutting, digging, or trimming.</li>
+                <li><strong>Implements</strong> – Larger attachments (<span class="example">e.g., plow, harrow, cultivator</span>) typically pulled by animals or machines to perform heavy field work like land preparation.</li>
+                <li><strong>Equipment</strong> – Motorized or mechanized devices (<span class="example">e.g., tractor, water pump, sprayer</span>) for high-volume or labor-intensive operations such as transporting goods or applying fertilizers.</li>
+            </ul>
+            <p>Knowing their uses ensures efficient and appropriate application in farm work, which is critical for successful crop and animal production.</p>
+      
+    <h4>Agricultural Hazards and Risks in Farm Operations</h4>
+            <h4>Precautionary measures</h4>
+            <p>These are proactive steps to prevent damage to tools/equipment and avoid accidents. Examples include keeping tools clean and dry after use, storing them in secure, organized spaces, checking for wear or damage before operation, and using protective guards on equipment.</p>
+            <p>Precautionary measures help extend the lifespan of farm resources and maintain a safe working environment.</p>
+        
+        
+            <h4>Safety procedures in using tools and equipment</h4>
+            <p>This focuses on rules for safe operation to protect the user and others. It includes wearing proper personal protective equipment (PPE) like gloves, goggles, or boots; following manufacturer instructions for machines; avoiding distractions while working; and only operating equipment one is trained to use.</p>
+            <p>Safety procedures are essential for reducing risks in farm operations and ensuring sustainable, responsible work practices.</p>
+
+   <h4>Agricultural Practices in Crop Production</h4>
+            <p class="section-intro">
+                This section focuses on the foundational steps before and during planting – the groundwork that determines crop success:
+            </p>
+            <ul class="subtopic-list">
+                <li><strong>Site selection:</strong> Choosing where to grow crops based on factors like soil quality, sunlight, and water access to ensure optimal growth conditions.</li>
+                <li><strong>Land preparation:</strong> Preparing the soil (e.g., tilling, plowing) to loosen it, remove weeds, and improve nutrient availability for seeds or seedlings.</li>
+                <li><strong>Crop selection:</strong> Picking appropriate crops based on climate, soil type, market demand, or local farming goals.</li>
+                <li><strong>Planting/Transplanting:</strong> Properly sowing seeds or moving seedlings to the field at the right time and spacing to support healthy root development and growth.</li>
+            </ul>
+            <p class="section-conclusion">
+                Together, these steps ensure crops start strong – poor planning here can lead to low yields or crop failure, so understanding each practice is critical.
+            </p>
+
+        
+        `;
+    }
+
+    else if (section === "performance") {
+        content.innerHTML = `
+            <h2>Performance Standard</h2>
+            <p>
+
+At the end of the second quarter, the learner is expected to demonstrate practical skills and proper work values in performing basic tasks related to Technology and Livelihood Education. The learner can independently perform simple procedures, use tools and materials safely and correctly, and apply knowledge in real-life situations.
+Specifically, the learner is able to:
+Perform basic tasks and procedures in the chosen TLE area (such as ICT, Home Economics, Agri-Fishery Arts, or Industrial Arts)
+Use tools, equipment, and materials properly and safely
+Follow instructions, steps, and safety rules accurately
+Demonstrate good work habits such as cleanliness, cooperation, responsibility, and time management
+Produce simple outputs or projects that meet given standards
+Show creativity, accuracy, and efficiency in doing assigned activities</p>
+        `;
+    }
+
+    else if (section === "standard") {
+        content.innerHTML = `
+            <h2>Content Standard</h2>
+            <p>The <strong>Content Standard in Agriculture and Fishery Arts</strong> The learners demonstrate an understanding of the concepts and skills in agri-crops and animal production. The content standard section for these topics is not fully visible in the image. However, aligning with the overall Quarter Il Agriculture and Fishery Arts (AFA) framework for Grade 7 (from prior context) and the structure of this curriculum segment, the overarching content standard applies: The learners demonstrate an understanding of the concepts and skills in agri-crops and animal production - with specific focus on agricultural practices in crop production, and care and maintenance of crops.</p>
+
+            <p>The standard also promotes appreciation of cultural and local food traditions, encouraging respect for diverse dishes and cooking methods while fostering creativity. It prepares learners for practical life skills and careers in culinary arts, food service, and hospitality, developing discipline, teamwork, and responsibility. Overall, it aims to create knowledgeable, skillful, and health-conscious individuals who can cook safely, eat nutritiously, and appreciate food culture.</p>
+        `;
+    }
+
+    else if (section === "objectives") {
+        content.innerHTML = `
+            <h2>The students should be able to Identity the basic tools, materials, and equipment used in the chosen TLE specialization.  Explain the proper uses and functions of tools and material according to safely standards .
+Demonstrate correct procedures in handling tools and materials safely and responsibly show teamwork ,discipline, and responsiblity while doing TLE Activities</p>
+        `;
+    }
+
+    else if (section === "competencies") {
+        content.innerHTML = `
+            <h2>Learning Competencies</h2>
+            <p>Agriculture combines professional careers and agribusiness opportunities by merging nature with modern technology and entrepreneurship. It teaches the efficient use of manual tools and heavy machinery to optimize labor and improve farm productivity. By identifying hazards and following safety protocols, you learn to manage risks and protect both human health and the environment. Finally, mastering the crop production process ensures high-quality yields through disciplined resource management and a deep understanding of the plant life cycle.</p>
+        `;
+    }
+
+    else if (section === "activity1") {
+        content.innerHTML = `
+            <h2>🎣 ACTIVITY 1</h2>
+            <h3>Matching Type</h3>
+
+            <p><strong>Objective:</strong> #</p>
+            <p><strong>Directions:</strong> Match Column A with Column B.</p>
+ <h4>COLUMN A</h4>
+                <ol class="item-list">
+<li>Agribusiness Manager</li>
+<li>Agronomist</li>
+<li>Aquaculturist (Crop Production)</li>
+<li>Technician</li>
+<li>Livestock Technician</li>
+                    <li>Agriculture and Fisheries Entrepreneur</li>
+                    <li>Agri-Tourism Operator</li>
+                    <li>Grain Trading</li>
+                    <li>International Trade Consulting</li>
+                    <li>Organic Farming</li>
+                    <li>Hydroponics</li>
+                    <li>Aquaculture Entrepreneur</li>
+            
+<h4>COLUMN B</h4>
+
+<ol class="item-list" type="A">
+                    <li>Understands the growth, development, and production of aquatic animals</li>
+                    <li>Establishes and runs own farming companies with an emphasis on profitability, sustainability, and innovation in agricultural, animal, and fisheries production</li>
+                    <li>Guides farmers on the effective and sustainable planting, growing, and harvesting of crops, with an emphasis on crop production and soil management</li>
+                    <li>Uses nutrient-rich water solutions to produce plants without the need for soil</li>
+                    <li>A businessperson who engages in and manages the commercial production of aquatic organisms, such as fish, shellfish, and seaweed</li>
+                    <li>Manages the business aspects of farming activities, including agricultural product management, marketing, and planning</li>
+                    <li>Provides guidance to agricultural traders regarding international markets, trade laws, tariffs, and export-import protocols for agricultural goods</li>
+                    <li>Entails the purchase and sale of grains, including barley, wheat, corn, and rice both domestically and abroad</li>
+                    <li>Farms that welcome guests can provide pick-your-own food, farm accommodations, farm tours, and agricultural education programs</li>
+                    <li>Entails avoiding the use of artificial fertilizers, herbicides, and pesticides in favor of sustainability and natural processes. Market prices are frequently higher for organic produce</li>
+                    <li>Helps with the planting, raising, and harvesting of crops and tends to crops, runs agricultural equipment, and applies pesticides and fertilizers</li>
+                    <li>Ensures the well-being and production of animals through proper care and monitors the animals' unkeep, feeding, and reproduction</li>
+           
+<h4>Answer Key</h4>
+<p>1-F | 2-C | 3-A | 4-K | 5-L | 6-B | 7-G | 8-H | 9-I | 10-J | 11-D | 12-E </p>
+        `;
+    }
+
+    else if (section === "activity2") {
+        content.innerHTML = `
+            <h2>🌳 ACTIVITY 2</h2>
+     
+<h3>Fertilizing Plants: The Process</h3>
+
+    <p class="directions">Directions: Sort the following stages of fertilizing plants according to the correct order using numbers 1 to 6. Write your answers on a separate sheet of paper.</p>
+
+    <ul class="stage-list">
+        <li>____ Monitoring</li>
+        <li>____ Applying fertilizer</li>
+        <li>____ Choosing the right fertilizer</li>
+        <li>____ Soil Testing</li>
+        <li>____ Application method</li>
+        <li>____ Watering</li>
+        <li>____ Soil Testing</li>
+    </ul>
+
+    <div class="Questions">
+        <h4>Answer the following questions on a separate sheet of paper.</h4>
+        <p>1. Why should you test the soil before applying fertilizer?</p>
+        <p>2. Why is it important to fertilize plants?</p>
+    </div>
+           
+        
+        `;
+    }
+
+    else if (section === "assessment1") {
+        content.innerHTML = `
+            <h2>Assessment: Agricultural Tools, Implements, Equipment, and Farm Hazards</h2>
+
+<p><strong>Type:</strong> Multiple Choice</p>
+            <p><strong>Direction:</strong> Choose the correct answer.</p>
+
+            <p>
+                1. What is a key reason modern farming relies on quality agricultural tools, implements, and equipment?<br>
+                A) To reduce the number of farm workers needed<br>
+                B) To boost productivity, efficiency, and overall crop output<br>
+                C) To make farming look more advanced<br>
+                D) To minimize the need for maintenance
+            </p>
+
+            <p>
+               2. Which of the following is a core learning competency for this lesson?<br>
+                A) Design new agricultural equipment<br>
+                B) Differentiate between tools, implements, equipment, and identify safety procedures<br>
+                C) Calculate the cost of all farm machinery<br>
+                D) Grow crops without any tools
+            </p>
+
+            <p>
+               3. Why is it important to understand the functions of different farm tools, materials, and equipment?<br>
+                A) To show off knowledge to other farmers<br>
+                B) To ensure agricultural production activities are effective and tools are maintained properly<br>
+                C) To only use the most expensive options<br>
+                D) To avoid having to learn new equipment later
+            </p>
+
+            <p>
+              4. The "Farm Frenzy" Pictionary activity is designed to help learners<br>
+               A) Win prizes for drawing skills<br>
+                B) Memorize tool prices<br>
+                C) Recognize and communicate about different tools, implements, and equipment<br>
+                D) Practice drawing for art class
+            </p>
+
+            <p>
+                5. Which of the following is a focus area of the lesson’s learning objectives??<br>
+                A) Selling farm equipment for profit<br>
+                B) Discussing usage, safety, and maintenance of agricultural tools/equipment<br>
+                C) Building farm structures from scratch<br>
+                D) Importing tools from other countries
+            </p>
+
+            <h4>Answer Key</h4>
+            <p>B | B | B | C | B | B</p>
+        `;
+    }
+
+    else if (section === "assessment2") {
+        content.innerHTML = `
+            <h2>Assessment 2: Agriculture</h2>
+            <p><strong>Type:</strong> Sustainable agriculture is based on agricultural crop production practices and
+maintenance, which are essential to ensuring food security, environmental stewardship,
+and economic development. By utilizing environmentally friendly techniques, sustainable
+agriculture reduces the dependency on chemical inputs and minimizes the adverse impacts on
+ecosystems. This approach not only preserves natural resources but also enhances biodiversity,
+creating a more resilient agricultural system that can withstand various environmental
+challenges.
+ </p>
+            <p><strong>Direction:</strong>Answer the following briefly. Write your answers on a separate sheet of paper </p>
+ 
+            <p>
+               1. How can responsible crop production practices promote community health and well-being?
+            </p>
+
+            <p>
+                2. How does pest and disease management contribute to crop yield and quality?
+            </p>
+
+        
+        `;
+    }
+
+    else if (section === "reference1") {
+        content.innerHTML = `
+            <h2>References</h2>
+            <p style="font-size:22px;"><strong>Where I Gathered My Assessment and Activity Information</strong></p>
+            <p>
+                The activities and assessments were based on the MATATAG Curriculum Guide for
+                Technology and Livelihood Education, classroom discussions, and standard lessons
+                on Agriculture and Fishery Arts.
+            </p>
+        `;
+    }
+
+    else {
+        content.innerHTML = `<h2>Section</h2><p>Content coming soon.</p>`;
+    }
+}
+</script>
+
+</body>
+</html>
